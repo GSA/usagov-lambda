@@ -324,8 +324,23 @@
         "sort": "-rt:activeUsers"
       },
       "meta": {
-        "name": "Top Cities (Live)",
-        "description": "Top cities for active onsite users."
+        "name": "Top Cities",
+        "description": "Top cities for active onsite users"
+      }
+    },
+    {
+      "name": "top-cities-90-days",
+      "frequency": "daily",
+      "query": {
+        "start-date": "90daysAgo",
+        "end-date": "yesterday",
+        "dimensions": ["ga:city"],
+        "metrics": ["ga:users"],
+        "sort": "-ga:users"
+      },
+      "meta": {
+        "name": "Top Cities (90 Days)",
+        "description": "Last 90 days' of Top cities for onsite users."
       }
     },
     {
@@ -340,6 +355,21 @@
       "meta": {
         "name": "Top Cities",
         "description": "Top countries for active onsite users."
+      }
+    },
+    {
+      "name": "top-countries-90-days",
+      "frequency": "daily",
+      "query": {
+        "start-date": "90daysAgo",
+        "end-date": "yesterday",
+        "dimensions": ["ga:country"],
+        "metrics": ["ga:users"],
+        "sort": "-ga:users"
+      },
+      "meta": {
+        "name": "Top Countries (90 Days)",
+        "description": "Last 90 days' of Top countries for onsite users."
       }
     },
     {
@@ -380,7 +410,7 @@
     },
     {
       "name": "top-external-links-yesterday",
-      "frequency": "daily",
+      "frequency": "hourly",
       "query": {
         "dimensions": ["ga:pageTitle", "ga:eventLabel", "ga:eventAction", "ga:pagePath"],
         "metrics": ["ga:totalEvents"],
