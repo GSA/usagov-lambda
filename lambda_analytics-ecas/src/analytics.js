@@ -14,7 +14,8 @@ const query = (report) => {
 }
 
 const _loadReports = () => {
-  const _reportFilePath = path.resolve(process.cwd(), config.reports_file || "reports/reports.json")
+  //const _reportFilePath = path.resolve(process.cwd(), config.reports_file || "reports/reports.json")
+  const _reportFilePath = path.resolve(process.cwd(), config.reports_file || "reports/usagov-analytics.json")
   return require(_reportFilePath).reports
 }
 
